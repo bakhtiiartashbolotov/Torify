@@ -1,0 +1,28 @@
+services:
+  web:
+    build: .
+    command: python /DjangoProject/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/DjangoProject
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+    environment:
+      - "DJANGO_SECRET_KEY=django-insecure-hv1(e0r@v4n4m6gqdz%dn(60o=dsy8&@0_lbs8p-v3u^bs4)xl"
+      - "DJANGO_DEBUG=True"
+      - "DATABASE_URL=postgres://postgres_user:postgres_password@db:5432/postgres_db"
+
+  db:
+    image: postgres:16
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - "5433:5432"
+    environment:
+      - "POSTGRES_DB=postgres_db"
+      - "POSTGRES_USER=postgres_user"
+      - "POSTGRES_PASSWORD=postgres_password"
+
+volumes:
+  postgres_data:
