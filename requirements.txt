@@ -3,10 +3,16 @@ dj-database-url==2.3.0
 Django==5.2
 django-cors-headers==4.7.0
 djangorestframework==3.16.0
+drf-yasg==1.21.10
 environs==14.1.1
+inflection==0.5.1
 marshmallow==4.0.0
+packaging==25.0
 pillow==11.2.1
 psycopg2-binary==2.9.10
 python-dotenv==1.1.0
+pytz==2025.2
+PyYAML==6.0.2
 sqlparse==0.5.3
 typing_extensions==4.13.2
+uritemplate==4.1.1
