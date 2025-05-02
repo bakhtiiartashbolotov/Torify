@@ -18,3 +18,10 @@ class Tour(models.Model):
 
     def __str__(self):
         return self.title
+
+class Booking(models.Model):
+    id = models.AutoField(primary_key=True)
+    tour = models.ForeignKey(Tour, on_delete=models.CASCADE, related_name='bookings')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='bookings')
+    status = models.CharField(max_length=20, choices=[('pending', 'Pending'), ('approved', 'Approved'), ('declined', 'Declined')], default='pending')
+    created_at = models.DateTimeField(auto_now_add=True)
