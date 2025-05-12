@@ -1,9 +1,14 @@
-from django.urls import path
-from .views import TourList, TourDetail, BookingListCreateView, BookingDetailView
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from .views import (
+    TourViewSet, BookingViewSet, TourOperatorBookingListView
+)
+
+router = DefaultRouter()
+router.register(r'', TourViewSet, basename='tour')
+router.register(r'bookings', BookingViewSet, basename='booking')
 
 urlpatterns = [
-    path("<int:pk>/", TourDetail.as_view(), name="tour-detail"),
-    path("", TourList.as_view(), name="tour-list"),
-    path("bookings/", BookingListCreateView.as_view(), name="booking-list-create"),
-    path("bookings/<int:pk>/", BookingDetailView.as_view(), name="booking-detail"),
+    path('', include(router.urls)),
+    path('bookings/operator/', TourOperatorBookingListView.as_view(), name='tour-operator-bookings'),
 ]
