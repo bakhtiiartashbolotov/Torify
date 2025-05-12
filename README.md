@@ -5,7 +5,7 @@
 ### a. Create a directory
 ### b. Clone the repository
 ```
-git pull https://github.com/bakhtiiartashbolotov/Torify.git
+git clone https://github.com/bakhtiiartashbolotov/Torify.git
 ```
 # 3. Build the Docker image
 ### a. Open project in VS Code or any IDE
