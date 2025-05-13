@@ -28,7 +28,11 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
+<<<<<<< HEAD
 
         fields = ('id', 'full_name', 'phone_number', 'email', 'role')
 
 
+=======
+        fields = ('id', 'full_name', 'phone_number', 'email', 'role')
+>>>>>>> b7d6001 (размещение туров)
