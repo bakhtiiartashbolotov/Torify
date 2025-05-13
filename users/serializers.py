@@ -31,5 +31,4 @@ class UserSerializer(serializers.ModelSerializer):
 
         fields = ('id', 'full_name', 'phone_number', 'email', 'role')
 
-        fields = ('id', 'full_name', 'phone_number', 'email', 'role')
 
