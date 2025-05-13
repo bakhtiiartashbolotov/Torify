@@ -21,9 +21,7 @@ class UserMeView(generics.RetrieveAPIView):
         return self.request.user
 
 class UserViewSet(viewsets.ReadOnlyModelViewSet):
-    """
-    A viewset that allows retrieving user profiles.
-    """
+
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [permissions.IsAuthenticated]
