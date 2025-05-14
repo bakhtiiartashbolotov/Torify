@@ -1,8 +1,8 @@
 from rest_framework import viewsets, permissions, filters, status, generics
-<<<<<<< HEAD
+
 from rest_framework import serializers
-=======
->>>>>>> b7d6001 (размещение туров)
+
+
 from rest_framework.response import Response
 from rest_framework.decorators import action
 from django_filters.rest_framework import DjangoFilterBackend

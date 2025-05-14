@@ -1,5 +1,3 @@
-# tours/serializers.py
-
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
 from .models import Tour, Booking
@@ -126,8 +124,8 @@ class BookingManagementSerializer(serializers.ModelSerializer):
             'full_name': obj.user.full_name,
             'phone_number': obj.user.phone_number,
             'email': obj.user.email,
-<<<<<<< HEAD
+
         }
-=======
-        }
->>>>>>> b7d6001 (размещение туров)
+
+        
+
