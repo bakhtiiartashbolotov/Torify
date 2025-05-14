@@ -1,6 +1,8 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
+from users.managers import CustomUserManager
+
 
 class CustomUser(AbstractUser):
     username = None
@@ -14,3 +16,7 @@ class CustomUser(AbstractUser):
 
     USERNAME_FIELD = 'phone_number'
     REQUIRED_FIELDS = ['role', 'full_name']
+
+    objects = CustomUserManager()
+    def __str__(self):
+        return self.full_name
