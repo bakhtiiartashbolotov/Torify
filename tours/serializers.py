@@ -56,6 +56,7 @@ class TourSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         
         validated_data['tour_operator'] = self.context['request'].user
+        validated_data['status'] = 'registration'
         return super().create(validated_data)
 
 
